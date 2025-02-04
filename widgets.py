@@ -4,6 +4,20 @@ window = tk.Tk()
 window.title("Interfaz Grafica")
 window.geometry("400x300")
 
+navbar = tk.Menu(window)
+window.config(menu = navbar)
+
+menu_file = tk.Menu(navbar, tearoff=0)
+navbar.add_cascade(label="Archivo", menu=menu_file)
+menu_file.add_command(label="Nuevo Archivo")
+menu_file.add_separator()
+menu_file.add_command(label="Salir del programa", command=window.quit)
+menu_file.config(bg="lightgreen")
+
+menu_help = tk.Menu(navbar, tearoff=0)
+navbar.add_cascade(label="Ayuda", menu=menu_help)
+menu_help.add_command(label="Información")
+
 # tag = tk.Label(window, text="Etiqueta 1")
 # tag.grid(row=0, column=0)
 
